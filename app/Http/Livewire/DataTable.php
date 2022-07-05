@@ -17,6 +17,7 @@ class DataTable extends Component
     public function delete($id)
     {
         Expense::destroy($id);
+        $this->render();
     }
 
     public function render()
