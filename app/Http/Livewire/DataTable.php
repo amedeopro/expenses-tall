@@ -11,14 +11,18 @@ class DataTable extends Component
 
     public $expenses;
 
-    protected $listeners = ['postAdded' => 'render'];
+    protected $listeners = ['expAdded' => 'render'];
 
 
+    public function delete($id)
+    {
+        Expense::destroy($id);
+    }
 
     public function render()
     {
 
-        $this->expenses = Expense::with('category')->get();
+        $this->expenses = Expense::with('category')->orderByDesc('updated_at')->get();
 
         return view('livewire.data-table');
     }

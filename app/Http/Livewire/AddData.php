@@ -40,7 +40,7 @@ class AddData extends Component
 
         Expense::create($r);
 
-        $this->emit('postAdded');
+        $this->emit('expAdded');
 
         //return redirect()->route('welcome')->with('success', 'Nuovo inserito');
 

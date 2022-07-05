@@ -33,9 +33,9 @@
                     <td class="px-6 py-4">
                         {{$row->updated_at}}
                     </td>
-                    <td class="px-6 py-4 text-right">
+                    <td wire:ignore class="px-6 py-4 text-right">
                         <ion-icon name="create-outline" class="mr-2"></ion-icon>
-                        <ion-icon name="close" class="text-red-700"></ion-icon>
+                        <a wire:click="delete({{$row->id}})"><ion-icon name="close" class="text-red-700 cursor-pointer"></ion-icon></a>
                     </td>
                 </tr>
                 @empty
